@@ -7,7 +7,7 @@
 
 									<h4>Tag Cloud</h4>
 									<div class="tagcloud">
-										<a href="{{route('postsbytag', ['slug'=>'philosophy'])}}">general</a>
+										<a href="{{route('postsbytag', ['slug'=>'philosophy'])}}">philosophy</a>
 									</div>
 
 								</div>

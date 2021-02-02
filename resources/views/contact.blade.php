@@ -71,4 +71,8 @@
 							</div>
 
 						</div><!-- .postcontent end -->
+					</div>
+				</div>
+			</div>
+		</section>
 @endsection
