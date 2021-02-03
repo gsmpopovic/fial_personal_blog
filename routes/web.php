@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+// MAIL ROUTES //
+
+Route::post('/processMail', [App\Http\Controllers\MailController::class, 'sendFIALMail'])->name('mail');
+// APP ROUTES // 
+
 Route:: get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('/'); 
 Route:: get('/contact', [App\Http\Controllers\IndexController::class, 'contact'])->name('contact'); 
 Route:: get('/about', [App\Http\Controllers\IndexController::class, 'about'])->name('about'); 
@@ -40,11 +46,15 @@ Route::middleware('Canvas\Http\Middleware\Session')->get('{slug}', [App\Http\Con
 
 // Route::middleware('Canvas\Http\Middleware\Session')->get('{slug}', 'BlogController@findPostBySlug');
 
+
+// AUTH ROUTES // 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+// CANVAS ROUTES // 
 
 Route::prefix('canvas-ui')->group(function () {
     Route::prefix('api')->group(function () {
