@@ -49,11 +49,11 @@
 						</nav><!-- #primary-menu end -->
 
 						<!-- Still working on search functionality. 1/22/2021 --> 
-						{{-- <form class="top-search-form" action="{{route("search")}}" method="post">
+						<form class="top-search-form" action="{{route("search")}}" method="GET">
 							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
 							{{ csrf_field() }}
-							<input type="hidden" name="_method" value="POST">
-						</form> --}}
+							<input type="hidden" name="_method" value="GET">
+						</form>
 
 					</div>
 				</div>

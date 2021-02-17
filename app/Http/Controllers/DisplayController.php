@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class DisplayController extends Controller
 {
-public function index($posts, $query_string){
-
-    return view('test', compact($posts, $query_string));
-
+public function index(Request $request){
+echo($request);
 }
 }

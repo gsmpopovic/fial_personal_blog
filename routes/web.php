@@ -26,8 +26,10 @@ Route:: get('/about', [App\Http\Controllers\IndexController::class, 'about'])->n
 
 
 // Route::post('/blog/search/{query_string}', [App\Http\Controllers\SearchController::class, 'searchPosts'])->name('search');
-Route::post('/blog/search', [App\Http\Controllers\SearchController::class, 'searchPosts'])->name('search');
+Route::get('/blog/search', [App\Http\Controllers\SearchController::class, 'searchPosts'])->name('search');
 // Route::get('/blog/search/{query_string}', ['uses' => 'DisplayController@index', 'as' => 'sd']); 
+Route::get('/blog/search/{query_string}', [App\Http\Controllers\DisplayController::class, 'index'])->name('sd');
+
 
 
 // Get all published posts
