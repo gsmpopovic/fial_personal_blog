@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 class DisplayController extends Controller
 {
 public function index(Request $request){
-echo($request);
+
+    $body = $request->getContent();
+    echo($body);
+    //return view('blog.displaysearch', compact());
+
 }
 }

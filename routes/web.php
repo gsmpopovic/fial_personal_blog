@@ -24,11 +24,11 @@ Route:: get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('
 Route:: get('/contact', [App\Http\Controllers\IndexController::class, 'contact'])->name('contact'); 
 Route:: get('/about', [App\Http\Controllers\IndexController::class, 'about'])->name('about'); 
 
+//the any() method will accept any HTTP method. I'm using it here as a work-around so a user can refresh 
+//the query page after they've accessed it. 
+Route::any('/blog/search', [App\Http\Controllers\SearchController::class, 'searchPosts'])->name('search');
 
-// Route::post('/blog/search/{query_string}', [App\Http\Controllers\SearchController::class, 'searchPosts'])->name('search');
-Route::get('/blog/search', [App\Http\Controllers\SearchController::class, 'searchPosts'])->name('search');
-// Route::get('/blog/search/{query_string}', ['uses' => 'DisplayController@index', 'as' => 'sd']); 
-Route::get('/blog/search/{query_string}', [App\Http\Controllers\DisplayController::class, 'index'])->name('sd');
+Route::any('/blog/search/{query_string}', [App\Http\Controllers\DisplayController::class, 'index'])->name('sd');
 
 
 
@@ -44,7 +44,8 @@ Route::get('topic/{slug}', [App\Http\Controllers\BlogController::class, 'getPost
 
  
 // Find a single post
-Route::middleware('Canvas\Http\Middleware\Session')->get('{slug}', [App\Http\Controllers\BlogController::class, 'findPostBySlug']);
+//Route::middleware('Canvas\Http\Middleware\Session')->get('{slug}', [App\Http\Controllers\BlogController::class, 'findPostBySlug']);
+Route::middleware('Canvas\Http\Middleware\Session')->get('blog/{slug}', [App\Http\Controllers\BlogController::class, 'findPostBySlug'])->name('single-post');
 
 // Route::middleware('Canvas\Http\Middleware\Session')->get('{slug}', 'BlogController@findPostBySlug');
 
