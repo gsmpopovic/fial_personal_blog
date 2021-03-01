@@ -19,7 +19,9 @@
 
 			<div class="container clearfix">
 				<h1>Falling into a Labyrinth</h1>
-				<span>Our Latest News</span>
+				<span><q>ἐνταῦθα ὥσπερ εἰς λαβύρινθον ἐμπεσόντες...</q></span>				
+				<span>Plato, <cite>Euthydemus 291b5</cite></span>
+
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="{{route('/')}}">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Blog</li>
