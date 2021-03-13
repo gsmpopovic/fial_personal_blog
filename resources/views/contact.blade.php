@@ -18,8 +18,8 @@
 
 								<div class="form-result"></div>
 
-								<form class="mb-0" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
-
+								<form class="mb-0" id="template-contactform" name="template-contactform" action="{{route('mail')}}" method="post">
+									{{ csrf_field() }}
 									<div class="form-process">
 										<div class="css3-spinner">
 											<div class="css3-spinner-scaler"></div>
