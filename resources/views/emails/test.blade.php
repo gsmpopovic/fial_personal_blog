@@ -5,6 +5,15 @@
   </head>
   <body>
     <h2>Test Email</h2>
-    <p>{{ $test_message }}</p>
+    <b>hi</b>
+
+    @foreach($body as $k => $v)
+
+    <b>hi</b>
+    {{count($body)}}
+    {{$body[$k]}}
+    @endforeach
+    <b>hi</b>
+
   </body>
 </html>

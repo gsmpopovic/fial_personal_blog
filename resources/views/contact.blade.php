@@ -14,17 +14,15 @@
 
 							<h3>Send me an Email</h3>
 
-							<div class="form-widget">
-
 								<div class="form-result"></div>
 
 								<form class="mb-0" id="template-contactform" name="template-contactform" action="{{route('mail')}}" method="post">
 									{{ csrf_field() }}
-									<div class="form-process">
+									{{-- <div class="form-process">
 										<div class="css3-spinner">
 											<div class="css3-spinner-scaler"></div>
 										</div>
-									</div>
+									</div> --}}
 
 									<div class="row">
 										<div class="col-md-4 form-group">
@@ -68,7 +66,6 @@
 									<input type="hidden" name="prefix" value="template-contactform-">
 
 								</form>
-							</div>
 
 						</div><!-- .postcontent end -->
 					</div>
