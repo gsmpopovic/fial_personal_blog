@@ -12,18 +12,19 @@ class FIALMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data = []; 
+    private $sender_info = []; 
+
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($sender_info)
     {
         //
 
-        $this->data = $data; 
+        $this->sender_info = $sender_info; 
     }
 
     /**
@@ -34,13 +35,22 @@ class FIALMail extends Mailable
     public function build()
     {
 
-        $name = $this->data['from'];
-        $subject = $this->data['subject'];
+        $name = $this->sender_info['name'];
+        $subject = $this->sender_info['subject'];
+        // $message = $this->sender_info['message']; 
+        // $email = $this->sender_info['email']; 
 
 
         $address = 'gsmpopovicdev@gmail.com';
-        // // $subject = 'This is a demo!';
-        // $name = 'Jane Doe';
+        
+                return $this->view('emails.template')
+                    ->from($address, $name)
+                    // ->cc($address, $name)
+                    // ->bcc($address, $name)
+                    // ->replyTo($address, $name)
+                    ->subject($subject)
+                    ->with('sender_info', $this->sender_info
+                );
 
         // return $this->view('emails.test')
         //             ->from($address, $name)
