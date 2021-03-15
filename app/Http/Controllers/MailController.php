@@ -49,7 +49,7 @@ class MailController extends Controller
     
     Mail::to('georgesmpopovic@gmail.com')->send(new FIALMail($sender_info));
 
-
+    return redirect()->route('contact');
     }
 
 }

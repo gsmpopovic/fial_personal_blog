@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 
 // MAIL ROUTES //
 
-Route::any('/processMail', [App\Http\Controllers\MailController::class, 'sendFIALMail'])->name('mail');
+Route::post('/processMail', [App\Http\Controllers\MailController::class, 'sendFIALMail'])->name('mail');
 // APP ROUTES // 
 
 Route:: get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('/'); 
